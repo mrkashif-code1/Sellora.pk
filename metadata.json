@@ -1,0 +1,6 @@
+{
+  "name": "Sellora - Pakistan Classifieds Marketplace",
+  "description": "Modern classified marketplace website in Pakistan to buy and sell mobiles, vehicles, electronics, property, fashion, and services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
