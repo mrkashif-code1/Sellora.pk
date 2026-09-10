@@ -4,6 +4,7 @@ import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ToastContainer } from './components/ToastContainer';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -68,13 +69,15 @@ const PageRenderer: React.FC = () => {
 
 export default function App() {
   return (
-    <AppProvider>
-      <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-emerald-500 selection:text-white antialiased">
-        <Navbar />
-        <PageRenderer />
-        <Footer />
-        <ToastContainer />
-      </div>
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-emerald-500 selection:text-white antialiased">
+          <Navbar />
+          <PageRenderer />
+          <Footer />
+          <ToastContainer />
+        </div>
+      </AppProvider>
+    </ErrorBoundary>
   );
 }
